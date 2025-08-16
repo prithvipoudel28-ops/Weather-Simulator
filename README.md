@@ -23,4 +23,3 @@ It generates fake **temperature**, **humidity**, and **light level** readings, a
 
 ---
 
-## Repository Structure
