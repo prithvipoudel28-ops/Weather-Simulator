@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EE Weather Simulator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      text-align: center;
+      padding: 40px;
+    }
+    h1 {
+      color: #333;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 300px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    }
+    .value {
+      font-size: 2em;
+      margin: 10px 0;
+      color: #007acc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Weather Station Simulator 🌦️</h1>
+  <div class="card">
+    <p>Temperature</p>
+    <div id="temp" class="value">-- °C</div>
+  </div>
+  <div class="card">
+    <p>Humidity</p>
+    <div id="humidity" class="value">-- %</div>
+  </div>
+  <div class="card">
+    <p>Light</p>
+    <div id="light" class="value">-- lx</div>
+  </div>
+
+  <script>
+    function getRandom(min, max) {
+      return (Math.random() * (max - min) + min).toFixed(1);
+    }
+
+    function updateData() {
+      document.getElementById("temp").textContent = getRandom(15, 35) + " °C";
+      document.getElementById("humidity").textContent = getRandom(30, 90) + " %";
+      document.getElementById("light").textContent = getRandom(100, 1000) + " lx";
+    }
+
+    setInterval(updateData, 2000); // update every 2 sec
+    updateData(); // initial call
+  </script>
+</body>
+</html>
